@@ -9,15 +9,22 @@
             <from-outcome>vaiParaListagem</from-outcome>
             <to-view-id>/PaisListagem.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaCidades</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>paisController</managed-bean-name>
         <managed-bean-class>frb.edu.br.savio.controladores.PaisController</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
-       
-    
-    
+       <managed-bean>
+        <managed-bean-name>cidadeController</managed-bean-name>
+        <managed-bean-class>frb.edu.br.savio.controladores.CidadeController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+   
     <navigation-rule>
         <from-view-id>/PaisListagem.xhtml</from-view-id>
         <navigation-case>
@@ -36,6 +43,10 @@
             <from-outcome>vaiParaDetalhe</from-outcome>
             <to-view-id>/PaisDetalhe.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEditar</from-outcome>
+            <to-view-id>/PaisEditar.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/PaisIncluir.xhtml</from-view-id>
@@ -49,6 +60,24 @@
         <navigation-case>
             <from-outcome>voltaParaListagem</from-outcome>
             <to-view-id>/PaisListagem.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEditar</from-outcome>
+            <to-view-id>/PaisEditar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/PaisEditar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagem</from-outcome>
+            <to-view-id>/PaisListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/CidadeListagem.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaIndex</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

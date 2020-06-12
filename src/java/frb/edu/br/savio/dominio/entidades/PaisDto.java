@@ -22,6 +22,10 @@ public class PaisDto {
     public PaisDto() {
     }
 
+    public PaisDto(int id) {
+       this.pais_id = id;
+    }
+    
     public PaisDto(int pais_id, String nome_pais, Date ultima_atualizacao) {
         this.pais_id = pais_id;
         this.nome_pais = nome_pais;

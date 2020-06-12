@@ -23,9 +23,6 @@ public class EnderecoDto {
 
     public EnderecoDto() {
     }
-
-    
-    
     public EnderecoDto(int entereco_id, String endereco, String endereco2, String bairro, CidadeDto cidade, String cep, String telefone, Date ultima_atualização) {
         this.entereco_id = entereco_id;
         this.endereco = endereco;
