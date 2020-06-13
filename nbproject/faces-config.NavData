@@ -2,12 +2,12 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="PaisDetalhe.xhtml" x="726" y="5" zoom="true"/>
-        <Node id="PaisEditar.xhtml" x="773" y="151" zoom="true"/>
         <Node id="index.xhtml" x="491" y="7" zoom="false"/>
+        <Node id="PaisEditar.xhtml" x="700" y="11" zoom="true"/>
+        <Node id="CidadeIncluir.xhtml" x="-199" y="18" zoom="true"/>
+        <Node id="PaisIncluir.xhtml" x="171" y="10" zoom="true"/>
         <Node id="PaisListagem.xhtml" x="290" y="256" zoom="false"/>
-        <Node id="PaisIncluir.xhtml" x="71" y="20" zoom="true"/>
-        <Node id="CidadeListagem.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="CidadeListagem.xhtml" x="3" y="257" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

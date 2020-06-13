@@ -52,7 +52,9 @@ public class CidadeDto {
     public PaisDto getPais() {
         return pais;
     }
-
+ public String getNomePais() {
+        return pais.getNome_pais();
+    }
     public void setPais(PaisDto pais) {
         this.pais = pais;
     }

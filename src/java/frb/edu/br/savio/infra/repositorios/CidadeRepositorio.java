@@ -121,22 +121,23 @@ public class CidadeRepositorio extends DaoUtil implements ICidade {
     @Override
     public List<CidadeDto> getListaTodos() {
         List<CidadeDto> cidades = new LinkedList<CidadeDto>();
-        String sql = "SELECT cidade_id, cidade, pais_id, ultima_atualizacao FROM cidade";
-        PaisDto pais = null;
-        PaisRepositorio p = new PaisRepositorio();
+        String sql = "SELECT* FROM cidade";
+        PaisRepositorio p = new PaisRepositorio() ;
+        PaisDto pais = new PaisDto();
         try {
-            
+             
             PreparedStatement ps = getPreparedStatement(sql);
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
-              pais= new PaisDto(rs.getInt("pais_id"));
+             pais = p.getRegistroPorId(rs.getInt(3));
                 
                 cidades.add(new CidadeDto(
-                        rs.getInt("cidade_id"),
-                        rs.getString("cidade"),
+                        rs.getInt(1),
+                        rs.getString(2),
                         pais,
-                        rs.getDate("ultima_atualizacao")));
+                        rs.getDate(4))
+                );
             }
             rs.close();
             ps.close();

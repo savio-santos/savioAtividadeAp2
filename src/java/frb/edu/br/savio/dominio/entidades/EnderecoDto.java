@@ -12,7 +12,7 @@ import java.util.Date;
  * @author SAVIO
  */
 public class EnderecoDto {
-    private int entereco_id;
+    private int endereco_id;
     private String endereco;
     private String endereco2;
     private String bairro;
@@ -22,9 +22,10 @@ public class EnderecoDto {
     private Date ultima_atualização;
 
     public EnderecoDto() {
+        cidade = new CidadeDto();
     }
-    public EnderecoDto(int entereco_id, String endereco, String endereco2, String bairro, CidadeDto cidade, String cep, String telefone, Date ultima_atualização) {
-        this.entereco_id = entereco_id;
+    public EnderecoDto(int endereco_id, String endereco, String endereco2, String bairro, CidadeDto cidade, String cep, String telefone, Date ultima_atualização) {
+        this.endereco_id = endereco_id;
         this.endereco = endereco;
         this.endereco2 = endereco2;
         this.bairro = bairro;
@@ -34,12 +35,12 @@ public class EnderecoDto {
         this.ultima_atualização = ultima_atualização;
     }
 
-    public int getEntereco_id() {
-        return entereco_id;
+    public int getEndereco_id() {
+        return endereco_id;
     }
 
-    public void setEntereco_id(int entereco_id) {
-        this.entereco_id = entereco_id;
+    public void setEndereco_id(int entereco_id) {
+        this.endereco_id = entereco_id;
     }
 
     public String getEndereco() {
