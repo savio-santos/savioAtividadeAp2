@@ -46,13 +46,13 @@ public String prepararInclusao(){
         
         cidadeRepositorio.incluir(cidade);
         cidades = null;
-        return "voltaParaCidades";
+        return "voltaParaListagem";
     }
     
     public String finalizaEdicao(){
         cidadeRepositorio.alterar(cidade);
         cidades = null;
-        return "voltaParaCidades";
+        return "voltaParaListagem";
     }
     
     public String finalizaDelecao(){

@@ -6,12 +6,16 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>vaiParaListagem</from-outcome>
+            <from-outcome>vaiParaPaises</from-outcome>
             <to-view-id>/PaisListagem.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>vaiParaCidades</from-outcome>
             <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEnderecos</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -24,7 +28,11 @@
         <managed-bean-class>frb.edu.br.savio.controladores.CidadeController</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
-   
+   <managed-bean>
+        <managed-bean-name>enderecoController</managed-bean-name>
+        <managed-bean-class>frb.edu.br.savio.controladores.EnderecoController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
     <navigation-rule>
         <from-view-id>/PaisListagem.xhtml</from-view-id>
         <navigation-case>
@@ -68,12 +76,56 @@
             <from-outcome>vaiParaIncluir</from-outcome>
             <to-view-id>/CidadeIncluir.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEditar</from-outcome>
+            <to-view-id>/CidadeEditar.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/CidadeIncluir.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>voltaParaListagem</from-outcome>
             <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/CidadeEditar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagem</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/EnderecoListagem.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>vaiParaEditar</from-outcome>
+            <to-view-id>/EnderecoEditar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaIncluir</from-outcome>
+            <to-view-id>/EnderecoIncluir.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/EnderecoEditar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagem</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/EnderecoIncluir.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagem</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

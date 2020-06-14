@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Inclusão de Endereco</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>INCLUSÃO DE NOVO ENDERECO</h1>
+            
+            <table>
+                <tbody>
+                    <tr>
+                        <td> <h:outputLabel value="CIDADE"/> </td>
+                        <td>   
+                            <h:selectOneMenu id="cboCidade"
+                                             value="#{enderecoController.endereco.cidade.cidade_id}"
+                                             style="width: 250px">
+                                
+                                <f:selectItem itemLabel="Selecione uma cidade..."
+                                              itemValue="-1"/>
+                                
+                                <f:selectItems value="#{cidadeController.cidades}"
+                                               var="cidade"
+                                               itemLabel="#{cidade.nomeCidade}"
+                                               itemValue="#{cidade.cidade_id}"/>
+                            
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td> <h:outputLabel value="NOME DA CIDADE"/> </td>
+                        <td> <h:inputText value="#{cidadeController.cidade.nomeCidade}" maxlength="13" size="40" /> </td>
+                    </tr>
+                            <tr>
+                        <td> <h:outputLabel value="ENDERECO"/> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.endereco}" maxlength="13" size="40" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="ENDERECO2"/> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.endereco2}" maxlength="13" size="40" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="BAIRRO"/> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.bairro}" maxlength="13" size="40" /> </td>
+                    </tr><tr>
+                        <td> <h:outputLabel value="CEP"/> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.cep}" maxlength="13" size="40" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <h:outputLabel value="TELEFONE"/> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.telefone}" maxlength="13" size="40" /> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <h:commandButton value="Voltar" style="width: 48%" action="voltaParaListagem" />
+            <h:commandButton value="Gravar" style="width: 48%" action="#{enderecoController.finalizaInclusao()}" />
+            
+        </h:form>
+    </h:body>
+</html>
+
