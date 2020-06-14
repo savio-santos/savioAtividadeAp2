@@ -11,10 +11,10 @@
         <h:form>
             <h1>LISTAGEM DE ENDERECOS</h1>
             <h:commandButton value="VOLTAR" style="width: 95%" action="voltaParaIndex"/>
-            <h:commandButton value="CADASTRAR NOVO ENDERECO" style="width: 95%" action="#{enderecoController.prepararInclusao()}" />
+            <h:commandButton value="CADASTRAR NOVO ENDERECO" style="width: 100%" action="#{enderecoController.prepararInclusao()}" />
             <br/>
             
-            <h:dataTable style="width: 95%"
+            <h:dataTable style="width: 100%"
                          var="um"
                          value="#{enderecoController.enderecos}"
                          border="1"
@@ -55,7 +55,7 @@
                 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputLabel value="cidade"/>
+                        <h:outputLabel value="CIDADE"/>
                     </f:facet>
                     
                     <h:outputLabel value="#{um.cidade.nomeCidade}"/>

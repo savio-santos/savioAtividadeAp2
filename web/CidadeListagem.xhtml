@@ -61,15 +61,9 @@
                         <h:outputLabel value="AÇÃO"/>
                     </f:facet>
 
-                    <h:commandLink value="Detalhe" action="vaiParaDetalhe">
-                        <f:setPropertyActionListener target="#{cidadeController.cidade}" value="#{um}" />
-                    </h:commandLink>
-
-                    <h:outputLabel value="|"/>
                     <h:commandLink value="Editar" action="vaiParaEditar">
                         <f:setPropertyActionListener target="#{cidadeController.cidade}" value="#{um}" />
                     </h:commandLink>
-
 
                     <h:outputLabel value="|"/>
 
