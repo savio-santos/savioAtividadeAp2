@@ -24,35 +24,32 @@
                                 
                                 <f:selectItems value="#{cidadeController.cidades}"
                                                var="cidade"
-                                               itemLabel="#{cidade.nomeCidade}"
+                                               itemLabel="#{cidade.nome_cidade}"
                                                itemValue="#{cidade.cidade_id}"/>
                             
                             </h:selectOneMenu>
                         </td>
                     </tr>
                     
+                    
                     <tr>
-                        <td> <h:outputLabel value="NOME DA CIDADE"/> </td>
-                        <td> <h:inputText value="#{cidadeController.cidade.nomeCidade}" maxlength="13" size="40" /> </td>
-                    </tr>
-                            <tr>
                         <td> <h:outputLabel value="ENDERECO"/> </td>
-                        <td> <h:inputText value="#{enderecoController.endereco.endereco}" maxlength="13" size="40" /> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.endereco}"  size="40" /> </td>
                     </tr>
                     <tr>
                         <td> <h:outputLabel value="ENDERECO2"/> </td>
-                        <td> <h:inputText value="#{enderecoController.endereco.endereco2}" maxlength="13" size="40" /> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.endereco2}" size="40" /> </td>
                     </tr>
                     <tr>
                         <td> <h:outputLabel value="BAIRRO"/> </td>
-                        <td> <h:inputText value="#{enderecoController.endereco.bairro}" maxlength="13" size="40" /> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.bairro}"  size="40" /> </td>
                     </tr><tr>
                         <td> <h:outputLabel value="CEP"/> </td>
-                        <td> <h:inputText value="#{enderecoController.endereco.cep}" maxlength="13" size="40" /> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.cep}"  size="40" /> </td>
                     </tr>
                     <tr>
                         <td> <h:outputLabel value="TELEFONE"/> </td>
-                        <td> <h:inputText value="#{enderecoController.endereco.telefone}" maxlength="13" size="40" /> </td>
+                        <td> <h:inputText value="#{enderecoController.endereco.telefone}"  size="40" /> </td>
                     </tr>
                 </tbody>
             </table>

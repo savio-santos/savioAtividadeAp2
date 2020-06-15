@@ -93,7 +93,7 @@ public class PaisRepositorio extends DaoUtil implements IPais {
     @Override
     public PaisDto getRegistroPorId(int id) {
         PaisDto pais = null;
-        String sql = "SELECT* WHERE pais_id=?";
+        String sql = "SELECT* FROM pais WHERE pais_id=?";
         try {
             PreparedStatement ps = super.getPreparedStatement(sql);
             ps.setInt(1, id);

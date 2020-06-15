@@ -16,7 +16,7 @@
                         <td> <h:outputLabel value="PAIS"/> </td>
                         <td>   
                             <h:selectOneMenu id="cboPais"
-                                             value="#{cidadeController.cidade.nomePais}"
+                                             value="#{cidadeController.cidade.pais.nome_pais}"
                                              style="width: 250px">
                                 
                                 <f:selectItem itemLabel="Selecione um pais..."
@@ -33,7 +33,7 @@
                     
                     <tr>
                         <td> <h:outputLabel value="NOME DA CIDADE"/> </td>
-                        <td> <h:inputText value="#{cidadeController.cidade.nomeCidade}" maxlength="13" size="40" /> </td>
+                        <td> <h:inputText value="#{cidadeController.cidade.nome_cidade}"  size="40" /> </td>
                     </tr>
                     
                 </tbody>

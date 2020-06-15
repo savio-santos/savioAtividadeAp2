@@ -83,8 +83,8 @@ public class EnderecoRepositorio extends DaoUtil implements IEndereco {
 
     @Override
     public boolean deletar(int id) {
-        String sql = "DELETE FROM vendas "
-                + " WHERE idvendas=?";
+        String sql = "DELETE FROM endereco "
+                + " WHERE endereco_id= ?";
         PreparedStatement ps;
         int ret = -1;
         try {
@@ -112,13 +112,13 @@ public class EnderecoRepositorio extends DaoUtil implements IEndereco {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
+                    CidadeDto cidade = cid.getRegistroPorId(rs.getInt(5));            
                 endereco = new EnderecoDto(
                         rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
-                        cid.getRegistroPorId(rs.getInt(5)),
+                        cidade,
                         rs.getString(6),
                         rs.getString(7),
                         rs.getDate(8));
@@ -144,13 +144,13 @@ public class EnderecoRepositorio extends DaoUtil implements IEndereco {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
+                    CidadeDto cidade = cid.getRegistroPorId(rs.getInt(5));
                 enderecos.add(new EnderecoDto(
                         rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
-                        cid.getRegistroPorId(rs.getInt(5)),
+                        cidade,
                         rs.getString(6),
                         rs.getString(7),
                         rs.getDate(8))

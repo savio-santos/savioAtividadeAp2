@@ -37,7 +37,7 @@ public class CidadeRepositorio extends DaoUtil implements ICidade {
         try {
             ps = getPreparedStatement(sql);
             ps.setInt(1, cidade.getCidade_id());
-            ps.setString(2, cidade.getNomeCidade());
+            ps.setString(2, cidade.getNome_cidade());
             ps.setInt(3, cidade.getPais().getPais_id());
             ret = ps.executeUpdate();
             ps.close();
@@ -59,7 +59,7 @@ public class CidadeRepositorio extends DaoUtil implements ICidade {
         int ret = -1;
         try {
             ps = getPreparedStatement(sql);
-            ps.setString(1, cidade.getNomeCidade());
+            ps.setString(1, cidade.getNome_cidade());
             ps.setInt(2, cidade.getPais().getPais_id());
             ps.setInt(3, cidade.getCidade_id());
             ret = ps.executeUpdate();
@@ -102,10 +102,11 @@ public class CidadeRepositorio extends DaoUtil implements ICidade {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                cidade = new CidadeDto(rs.getInt("cidade_id"),
-                        rs.getString("cidade"),
-                        p.getRegistroPorId(rs.getInt("pais_id")),
-                        rs.getDate("ultima_atualizacao"));
+                PaisDto pais = p.getRegistroPorId(rs.getInt(3));
+                cidade = new CidadeDto(rs.getInt(1),
+                        rs.getString(2),
+                        pais,
+                        rs.getDate(4));
             }
             rs.close();
             ps.close();
@@ -123,14 +124,14 @@ public class CidadeRepositorio extends DaoUtil implements ICidade {
         List<CidadeDto> cidades = new LinkedList<CidadeDto>();
         String sql = "SELECT* FROM cidade";
         PaisRepositorio p = new PaisRepositorio() ;
-        PaisDto pais = new PaisDto();
+        
         try {
              
             PreparedStatement ps = getPreparedStatement(sql);
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
-             pais = p.getRegistroPorId(rs.getInt(3));
+             PaisDto pais = p.getRegistroPorId(rs.getInt(3));
                 
                 cidades.add(new CidadeDto(
                         rs.getInt(1),

@@ -77,12 +77,12 @@
             <to-view-id>/CidadeIncluir.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>refresh</from-outcome>
-            <to-view-id>/CidadeListagem.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>vaiParaEditar</from-outcome>
             <to-view-id>/CidadeEditar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -138,6 +138,10 @@
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/EnderecoDetalhe.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>vaiParaEditar</from-outcome>
+            <to-view-id>/EnderecoEditar.xhtml</to-view-id>
+        </navigation-case>
         <navigation-case>
             <from-outcome>voltaParaListagem</from-outcome>
             <to-view-id>/EnderecoListagem.xhtml</to-view-id>

@@ -25,7 +25,6 @@ public class CidadeDto {
         pais= new PaisDto();
     }
 
-    
     public CidadeDto(int cidade_id, String nome_cidade, PaisDto pais, Date ultima_atualizacao) {
         this.cidade_id = cidade_id;
         this.nome_cidade = nome_cidade;
@@ -41,15 +40,15 @@ public class CidadeDto {
         this.cidade_id = cidade_id;
     }
 
-    public String getNomeCidade() {
+    public String getNome_cidade() {
         return nome_cidade;
     }
 
-    public void setNOmeCidade(String nome_cidade) {
+  public void setNome_cidade(String nome_cidade) {
         this.nome_cidade = nome_cidade;
     }
 
-    public PaisDto getPais() {
+public PaisDto getPais() {
         return pais;
     }
  public String getNomePais() {

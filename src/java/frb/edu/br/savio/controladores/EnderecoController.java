@@ -60,7 +60,7 @@ public class EnderecoController {
 
     public String finalizaDelecao() {
         enderecoRepositorio.deletar(endereco.getEndereco_id());
-        endereco = null;
+        enderecos = null;
         return "refresh";
     }
 
