@@ -2,10 +2,10 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="index.xhtml" x="491" y="7" zoom="false"/>
         <Node id="PaisEditar.xhtml" x="700" y="11" zoom="true"/>
-        <Node id="EnderecoIncluir.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="491" y="7" zoom="false"/>
         <Node id="CidadeIncluir.xhtml" x="-199" y="18" zoom="true"/>
+        <Node id="EnderecoIncluir.xhtml" x="150" y="300" zoom="true"/>
         <Node id="EnderecoEditar.xhtml" x="150" y="150" zoom="true"/>
         <Node id="PaisIncluir.xhtml" x="171" y="10" zoom="true"/>
         <Node id="CidadeEditar.xhtml" x="650" y="150" zoom="true"/>
