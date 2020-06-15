@@ -4,13 +4,13 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <link rel="stylesheet" type="text/css" href="MeuCss.css" />
+        <link rel="stylesheet" type="text/css" href="css/MeuCss.css" />
         <title>Listagem de Enderecos</title>
     </h:head>
     <h:body>
         <h:form>
             <h1>LISTAGEM DE ENDERECOS</h1>
-            <h:commandButton value="VOLTAR" style="width: 95%" action="voltaParaIndex"/>
+            <h:commandButton value="VOLTAR" style="width: 100%" action="voltaParaIndex"/>
             <h:commandButton value="CADASTRAR NOVO ENDERECO" style="width: 100%" action="#{enderecoController.prepararInclusao()}" />
             <br/>
             
@@ -24,72 +24,71 @@
                     <f:facet name="header">
                         <h:outputLabel value="CÓDIGO"/>
                     </f:facet>
-                    
+                   <center> 
                     <h:outputLabel value="#{um.endereco_id}"/>                    
+                   </center>
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">
                         <h:outputLabel value="ENDERECO"/>
                     </f:facet>
-                    
+                    <center>
                     <h:outputLabel value="#{um.endereco}"/>                    
-                </h:column>
-                
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputLabel value="ENDERECO2"/>
-                    </f:facet>
-                    
-                    <h:outputLabel value="#{um.endereco2}"/>                    
+                    </center>
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">
                         <h:outputLabel value="BAIRRO"/>
                     </f:facet>
-                    
+                    <center>
                     <h:outputLabel value="#{um.bairro}"/>
-                
+                    </center>
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">
                         <h:outputLabel value="CIDADE"/>
                     </f:facet>
-                    
+                    <center>
                     <h:outputLabel value="#{um.cidade.nomeCidade}"/>
+                </center>
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputLabel value="CEP"/>
-                    </f:facet>
-                    
-                    <h:outputLabel value="#{um.cep}"/>                    
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
                         <h:outputLabel value="TELEFONE"/>
                     </f:facet>
-                    
+                    <center>    
                     <h:outputLabel value="#{um.telefone}"/>                    
+                    </center>
                 </h:column>
                 
                 <h:column>
                     <f:facet name="header">
                         <h:outputLabel value="ULTIMA ATUALIZAÇÃO"/>
                     </f:facet>
-                    
-                    <h:outputLabel value="#{um.ultima_atualização}"/>                    
-                </h:column>
+                    <center>
+                    <h:outputLabel value="#{um.ultima_atualização}">
+                    <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                    </h:outputLabel>
+                    </center>    
+            </h:column>
                 
                 <h:column>
+                    <center>
                     <f:facet name="header">
                         <h:outputLabel value="AÇÃO"/>
                     </f:facet>
                     
-                    <h:commandLink value="Editar" action="vaiParaEditar">
+                    <h:commandLink value="Detalhe" action="vaiParaDetalhe">
+                        <f:setPropertyActionListener target="#{enderecoController.endereco}" value="#{um}" />
+                    </h:commandLink>
+                        
+                        <h:outputLabel value="|"/>
+                    
+                        <h:commandLink value="Editar" action="vaiParaEditar">
                         <f:setPropertyActionListener target="#{enderecoController.endereco}" value="#{um}" />
                     </h:commandLink>
                     
@@ -99,7 +98,7 @@
                     <h:commandLink value="Deletar" action="#{enderecoController.finalizaDelecao()}">
                         <f:setPropertyActionListener target="#{enderecoController.endereco}" value="#{um}"/>
                     </h:commandLink>
-                                      
+                          </center>            
                 </h:column>
                 
             </h:dataTable>

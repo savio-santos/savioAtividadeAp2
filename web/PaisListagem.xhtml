@@ -27,7 +27,7 @@
                             <h:outputLabel value="CÓDIGO"/>
                         </f:facet>
 
-                        <h:outputLabel value="#{umPais.pais_id}"/>                    
+                        <center><h:outputLabel value="#{umPais.pais_id}"/></center>                    
                     </h:column>
 
                     <h:column>
@@ -35,22 +35,24 @@
                             <h:outputLabel value="PAIS"/>
                         </f:facet>
 
-                        <h:outputLabel value="#{umPais.nome_pais}"/>                    
+                        <center> <h:outputLabel value="#{umPais.nome_pais}"/></center>                    
                     </h:column>
 
                     <h:column>
                         <f:facet name="header">
-                            <h:outputLabel value="ULTIMA ATUALIZAÇÃO"/>
+                           <center> <h:outputLabel value="ULTIMA ATUALIZAÇÃO"/></center>
 
                         </f:facet>
-
+                        <center>
                         <h:outputLabel value="#{umPais.ultima_atualizacao}">
-                            
+                            <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
                            
                         </h:outputLabel>
+                            </center>
                     </h:column>
 
                     <h:column>
+                        <center>
                         <f:facet name="header">
                             <h:outputLabel value="AÇÃO"/>
                         </f:facet>
@@ -69,7 +71,7 @@
                         <h:commandLink value="Deletar" action="#{paisController.finalizaDelecao()}">
                             <f:setPropertyActionListener target="#{paisController.pais}" value="#{umPais}"/>
                         </h:commandLink>
-
+                    </center>
                     </h:column>
 
                 </h:dataTable>
