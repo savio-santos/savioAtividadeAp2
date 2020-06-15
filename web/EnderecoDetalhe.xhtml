@@ -46,7 +46,10 @@
                     </tr>
                     <tr>
                         <td> <h:outputLabel value="ULTIMA ATUALIZAÇÃO"/> </td>
-                        <td> <h:outputLabel value="#{enderecoController.endereco.endereco2}" /> </td>
+                        <td> <h:outputLabel value="#{enderecoController.endereco.ultima_atualização}" >
+                            <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                            </h:outputLabel> 
+                        </td>
                     </tr>
                 </tbody>
             </table>
